@@ -7,8 +7,10 @@
   <p>{{ object.content }}</p>
 </div>
 <div>
+    {% if article.author.pk == request.author.pk %}
   <p><a href="{% url 'article_edit' article.pk %}">Edit</a>
     <a href="{% url 'article_delete' article.pk %}">Delete</a>
+    {% endif %}
   </p>
   <p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
 </div>
